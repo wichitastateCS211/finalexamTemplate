@@ -1,0 +1,66 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.202.3/containers/docker-existing-dockerfile
+{
+	"name": "WSU C++/Python",
+	"runArgs": ["--init"],
+
+	// Sets the run context to one level up instead of the .devcontainer folder.
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+
+	// Set *default* container specific settings.json values on container create.
+        "settings": {
+            "C_Cpp.autocompleteAddParentheses": true,
+            "C_Cpp.default.cppStandard": "c++17",
+            "C_Cpp.default.cStandard": "c17",
+            "C_Cpp.default.intelliSenseMode": "linux-clang-x64",
+            "C_Cpp.dimInactiveRegions": false,
+            "C_Cpp.formatting": "clangFormat",
+            "cmake.buildDirectory": "${workspaceRoot}/build-vscode",
+            "cmake.configureOnOpen": false,
+            "editor.acceptSuggestionOnEnter": "off",
+            "editor.suggestSelection": "first",
+            "files.trimTrailingWhitespace": true,
+            "python.languageServer": "Pylance",
+            "python.venvFolders": [
+                "envs",
+                ".pyenv",
+                ".direnv",
+                "~/.virtualenvs"
+            ],
+            "python.venvPath": "~/.virtualenvs",
+            "terminal.integrated.copyOnSelection": true,
+            "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+            "workbench.iconTheme": "city-lights-icons-vsc"
+        },
+
+	// Add the IDs of extensions you want installed when the container is created.
+        "extensions": [
+            "ms-vscode.cpptools",
+            "vadimcn.vscode-lldb",
+            "ms-vscode.cmake-tools",
+            "twxs.cmake",
+            "ms-toolsai.jupyter",
+            "ms-toolsai.jupyter-renderers",
+            "ms-python.python",
+            "ms-python.vscode-pylance",
+            "visualstudioexptteam.vscodeintellicode",
+            "yummygum.city-lights-icon-vsc"
+        ]
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Uncomment the next line to run commands after the container is created - for example installing curl.
+	// "postCreateCommand": "apt-get update && apt-get install -y curl",
+
+	// Uncomment when using a ptrace-based debugger like C++, Go, and Rust
+	// "runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
+
+	// Uncomment to use the Docker CLI from inside the container. See https://aka.ms/vscode-remote/samples/docker-from-docker.
+	// "mounts": [ "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind" ],
+
+	// Uncomment to connect as a non-root user if you've added one. See https://aka.ms/vscode-remote/containers/non-root.
+	// "remoteUser": "vscode"
+}

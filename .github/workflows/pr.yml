@@ -1,0 +1,18 @@
+name: learn-github-actions
+on: [pull_request]
+jobs:
+  add-code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Log Submission time
+        run: echo "Submitted at " $(date)
+      - name: List files
+        run: ls -alh
+      - name: Compile Code
+        run: ./.github/scripts/compile_script.sh "${pwd}"
+        shell: bash
+      - name: Run program
+        run: ./submission
+        shell: bash
