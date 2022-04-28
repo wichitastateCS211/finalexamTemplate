@@ -11,7 +11,7 @@ jobs:
       - name: List files
         run: ls -alh
       - name: Compile Code
-        run: cmake -DCMAKE_CXX_COMPILER=clang++ -S . -B build && cmake --build build
+        run: cmake -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_CXX_FLAGS="-Wall -Wextra -std=c++17" -S . -B build && cmake --build build
         shell: bash
       - name: Run program
         run: EXE=$(find ./build -name '*final'); echo "Running $EXE"; $EXE

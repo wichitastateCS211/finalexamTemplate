@@ -1,44 +1,18 @@
 /*
- * Name: 
- * WSUID: 
+ * Name:
+ * WSUID:
  * Final Exam
  * Implement Book and Shelf classes
  */
- 
- #include "Book.hpp"
- #include "Shelf.hpp"
 
-Book        Shelf::get_book(std::size_t idx)
-{
-    return Book({}, {}, 0, Genre::ERR);
-}
+#include "Shelf.hpp"
+#include "Book.hpp"
+#include "Genre.hpp"
 
-void        Shelf::add_book(Book book)
-{
-    return;
-}
+// Remaining includes below this line
 
-void        Shelf::remove_book(int idx)
-{
-    return;
-}
 
-int         Shelf::genre_count(Genre genre)
-{
-    return 0;
-}
+// Implement Shelf class functions below this line
 
-std::size_t Shelf::size()
-{
-    return 0;
-}
 
-void        Shelf::sort_by_title()
-{
-    return;
-}
-
-void read_books_from_file(std::string filename, Shelf& shelf)
-{
-    return;
-}
+// Implement free function below this line
