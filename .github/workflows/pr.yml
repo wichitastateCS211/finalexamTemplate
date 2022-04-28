@@ -11,8 +11,8 @@ jobs:
       - name: List files
         run: ls -alh
       - name: Compile Code
-        run: ./.github/scripts/compile_script.sh "${pwd}"
+        run: cmake -DCMAKE_CXX_COMPILER=clang++ -S . -B build && cmake --build build
         shell: bash
       - name: Run program
-        run: ./submission
+        run: EXE=$(find ./build -name '*final'); echo "Running $EXE"; $EXE
         shell: bash
